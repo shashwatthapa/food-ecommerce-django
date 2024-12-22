@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.password_validation import password_validators_help_texts
-
+from .models import FoodItems
 
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(
@@ -41,4 +41,3 @@ class LoginForm(forms.Form):
         label = "Password",
         widget = forms.PasswordInput(attrs={'class':'form-control'}))
     
-
