@@ -40,3 +40,6 @@ def dashboard(request):
 def logout_view(request):
     logout(request)
     return redirect('login')
+
+def admin_view(request):
+    pass
