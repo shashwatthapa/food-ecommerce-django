@@ -42,8 +42,17 @@ def logout_view(request):
     return redirect('login')
 
 def main(request):
+    
     return render(request,'admin.html')
 
 def add(request):
-    form = PostItem()
-    return render(request,'add.html',{'form':form})
+    if request.method == 'POST':
+        form = PostItem(request.POST,request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('dashboard')
+       
+
+    else:
+        form = PostItem()
+        return render(request,'add.html',{'form':form})
