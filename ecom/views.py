@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from .forms import RegistrationForm,LoginForm,PostItem
 from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.decorators import login_required
+from .models import FoodItems
 # Create your views here.
 
 def register(request):
@@ -42,8 +43,8 @@ def logout_view(request):
     return redirect('login')
 
 def main(request):
-    
-    return render(request,'admin.html')
+    mem = FoodItems.objects.all().order_by('-id')
+    return render(request,'admin.html',{'mem':mem})
 
 def add(request):
     if request.method == 'POST':

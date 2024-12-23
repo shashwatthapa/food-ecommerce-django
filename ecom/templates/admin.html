@@ -4,5 +4,9 @@
 <div class="d-flex justify-content-center mt-5">
   <a href="{% url 'add' %}"><button type="button" class="btn btn-primary me-3">Add items</button></a>
 </div>
-
+{% for items in mem %}
+{{items.name}}
+<img src="{{ items.image.url }}" alt="{{ items.name }}" />
+{{items.price}}
+{% endfor %}
 {% endblock %}
