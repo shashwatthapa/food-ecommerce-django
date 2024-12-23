@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .forms import RegistrationForm,LoginForm
+from .forms import RegistrationForm,LoginForm,PostItem
 from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.decorators import login_required
 # Create your views here.
@@ -41,5 +41,9 @@ def logout_view(request):
     logout(request)
     return redirect('login')
 
-def admin_view(request):
-    pass
+def main(request):
+    return render(request,'admin.html')
+
+def add(request):
+    form = PostItem()
+    return render(request,'add.html',{'form':form})

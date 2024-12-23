@@ -41,3 +41,14 @@ class LoginForm(forms.Form):
         label = "Password",
         widget = forms.PasswordInput(attrs={'class':'form-control'}))
     
+class PostItem(forms.ModelForm):
+    class Meta:
+        model = FoodItems
+        fields = ['name','image','price']
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control form-control-lg'}),
+            'image': forms.ClearableFileInput(attrs={'class': ''}),
+            'price': forms.NumberInput(attrs={'class': 'form-control form-control-lg'}),
+        }
+
+
