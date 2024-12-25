@@ -3,6 +3,9 @@
 <form method="post">
     {% csrf_token %}
     <div class="login_div">
+        {% if error %}
+        <p style="color:red">Invalid crendentials</p>
+        {% endif  %}
         <h1>Login Form</h1>
         {{form.as_p}}
         <button>Login</button>
