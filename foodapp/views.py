@@ -64,5 +64,5 @@ def add(request):
     else:
         form = Post()
         return render(request,'add.html',{"form":form})
-        
+
 
