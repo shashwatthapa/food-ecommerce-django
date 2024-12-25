@@ -25,3 +25,43 @@
 .login_div h1{
     text-align: center;
 }
+
+.div-for-products {
+    padding: 20px;
+    position: relative;
+    width: 60%;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 3px 15px rgba(255, 255, 255, 0.3); /* White shadow */
+    border-radius: 10px;
+    border: 1px solid #f0f0f0;
+}
+
+.div-for-products table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures no gaps between table cells */
+}
+
+.div-for-products td {
+    padding: 15px;
+    vertical-align: middle;
+}
+
+.product-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-radius: 8px; /* Optional: adds rounded corners to the image */
+}
+
+.div-for-products h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 18px;
+    color: #555;
+    font-weight: bold;
+}

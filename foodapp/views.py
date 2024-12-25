@@ -41,7 +41,8 @@ def logout_views(request):
     return redirect('login')
 
 def products(request):
-    pass
+    mem = PostItem.objects.all()
+    return render(request,"product.html",{"mem":mem})
 
 def carts(request):
     pass
@@ -49,6 +50,8 @@ def carts(request):
 def main(request):
     mem = PostItem.objects.all()
     return render(request,"main.html",{"mem":mem})
+
+
 
 def add(request):
     if request.method == 'POST':
