@@ -1,7 +1,8 @@
 from django.shortcuts import render,redirect
-from .forms import RegistrationForm,LoginForm
+from .forms import RegistrationForm,LoginForm,Post
 from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.decorators import login_required
+from .models import PostItem
 # Create your views here.
 def register(request):
     if request.method == 'POST':
@@ -46,5 +47,9 @@ def carts(request):
     pass
 
 def main(request):
-    return render(request,"main.html") 
+    mem = PostItem.objects.all()
+    return render(request,"main.html",{"mem":mem})
+
+def add(request):
+    pass
 

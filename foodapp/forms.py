@@ -1,6 +1,7 @@
 from django import forms 
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from . models import PostItem
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(
         required = True,
@@ -24,3 +25,8 @@ class LoginForm(forms.Form):
         widget=forms.PasswordInput()
     )
     
+class Post(forms.ModelForm):
+    class Meta:
+        model = PostItem
+        fields = ["name","image","price"]
+        

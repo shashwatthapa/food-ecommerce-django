@@ -1,1 +1,4 @@
 <button>Add items </button>
+{% for items in mem %}
+    <img src="{{items.image.url}}" alt="{{items.name}}">
+{% endfor %}
