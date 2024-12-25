@@ -2,14 +2,15 @@
     
     <a href="{% url 'home' %}">Home</a>
     <a href="{% url 'products' %}">Products</a>
+    
     <a href="{% url 'main' %}">Admin</a>
     <a href="{% url 'carts' %}">Carts</a>
     <a href="{% url 'logout' %}"><button class="logoutBtn">Logout</button></a>
 
 </nav>
 
-<form method="POST" enctype="multipart/form-data" action="{% url 'add' %}">
+<form method="POST" enctype="multipart/form-data" action="{% url 'update' mem.id %}">
     {% csrf_token %}
     {{form.as_p}}
-    <button> Add </button>
+    <button> Update </button>
 </form>

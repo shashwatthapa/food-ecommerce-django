@@ -70,3 +70,14 @@ def delete(request,id):
     mem = PostItem.objects.get(id=id)
     mem.delete()
     return redirect('main')
+
+def update(request,id):
+    mem = PostItem.objects.get(id=id)
+    if request.method == 'POST':
+        form = Post(request.POST,instance=mem)
+        if form.is_valid():
+            form.save()
+            return redirect('main')
+    else:
+        form = Post(instance=mem)
+        return render(request,"update.html",{"form":form,"mem":mem})
