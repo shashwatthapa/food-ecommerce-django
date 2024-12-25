@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .forms import RegistrationForm,LoginForm
 from django.contrib.auth import login,logout,authenticate
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 def register(request):
     if request.method == 'POST':
@@ -31,5 +32,10 @@ def login_view(request):
         form = LoginForm()
         return render(request,"login.html",{"form":form})
     
+@login_required
 def home(request):
     return render(request,'home.html')
+
+def logout_views(request):
+    logout(request)
+    return redirect('login')
