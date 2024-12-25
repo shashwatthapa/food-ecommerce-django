@@ -40,6 +40,7 @@ def logout_views(request):
     logout(request)
     return redirect('login')
 
+@login_required
 def products(request):
     mem = PostItem.objects.all()
     return render(request,"product.html",{"mem":mem})
@@ -47,12 +48,14 @@ def products(request):
 def carts(request):
     pass
 
+@login_required
 def main(request):
     mem = PostItem.objects.all()
     return render(request,"main.html",{"mem":mem})
 
 
 
+@login_required
 def add(request):
     if request.method == 'POST':
         form = Post(request.POST,request.FILES)
@@ -66,11 +69,13 @@ def add(request):
         return render(request,'add.html',{"form":form})
 
 
+@login_required
 def delete(request,id):
     mem = PostItem.objects.get(id=id)
     mem.delete()
     return redirect('main')
 
+@login_required
 def update(request,id):
     mem = PostItem.objects.get(id=id)
     if request.method == 'POST':

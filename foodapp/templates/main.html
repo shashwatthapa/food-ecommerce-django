@@ -4,8 +4,9 @@
     
     <a href="{% url 'home' %}">Home</a>
     <a href="{% url 'products' %}">Products</a>
-    {% if request.user. %}
+    {% if request.user.is_superuser %}
     <a href="{% url 'main' %}">Admin</a>
+    {% endif %}
     <a href="{% url 'carts' %}">Carts</a>
     <a href="{% url 'logout' %}"><button class="logoutBtn">Logout</button></a>
 
