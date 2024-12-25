@@ -2,8 +2,8 @@
 <link rel="stylesheet" href="{% static 'style.css' %}">
 <form action="post">
     {% csrf_token %}
-    <div class="registration_div">
-        <h1>Registration Form</h1>
+    <div class="login_div">
+        <h1>Login Form</h1>
         {{form.as_p}}
         <button>Register</button>
     </div>
