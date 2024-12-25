@@ -1,2 +1,12 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
 <h1>WELCOME TO HOME PAGE</h1>
-<a href="{% url 'logout' %}"><button>Logout</button></a>
+<nav>
+    
+     <a href="{% url 'home' %}">Home</a>
+     <a href="{% url 'products' %}">Products</a>
+     <a href="{% url 'main' %}">Admin</a>
+     <a href="{% url 'carts' %}">Carts</a>
+     <a href="{% url 'logout' %}"><button class="logoutBtn">Logout</button></a>
+
+</nav>

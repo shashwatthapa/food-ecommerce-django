@@ -38,3 +38,13 @@ def home(request):
 def logout_views(request):
     logout(request)
     return redirect('login')
+
+def products(request):
+    pass
+
+def carts(request):
+    pass
+
+def main(request):
+    return render(request,"main.html") 
+
