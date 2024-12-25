@@ -51,5 +51,15 @@ def main(request):
     return render(request,"main.html",{"mem":mem})
 
 def add(request):
-    pass
+    if request.method == 'POST':
+        form = Post(request.POST,request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('main')
+        else:
+            return render(request,'add.html',{"form":form})
+    else:
+        form = Post()
+        return render(request,'add.html',{"form":form})
+        
 

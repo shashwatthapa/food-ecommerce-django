@@ -29,4 +29,9 @@ class Post(forms.ModelForm):
     class Meta:
         model = PostItem
         fields = ["name","image","price"]
+        widget = {
+            "name":forms.TextInput(),
+            "image":forms.ClearableFileInput(),
+            "price":forms.NumberInput()
+        }
         

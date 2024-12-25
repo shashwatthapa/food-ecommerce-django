@@ -1,4 +1,4 @@
-<button>Add items </button>
+<a href="{% url 'add' %}"><button>Add items </button></a>
 {% for items in mem %}
     <img src="{{items.image.url}}" alt="{{items.name}}">
 {% endfor %}
