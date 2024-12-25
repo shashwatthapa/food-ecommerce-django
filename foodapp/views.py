@@ -66,3 +66,7 @@ def add(request):
         return render(request,'add.html',{"form":form})
 
 
+def delete(request,id):
+    mem = PostItem.objects.get(id=id)
+    mem.delete()
+    return redirect('main')

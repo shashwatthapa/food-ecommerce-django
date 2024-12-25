@@ -21,8 +21,8 @@
 
             <td><p>Price: {{items.price}}</p></td>
             <td><button>Edit</button></td>
-            <td><button>Delete</button></td>
-            </tr>
+            <td><a href="{% url 'delete' items.id %}"><button>Delete</button></a></td>
+        </tr>
         </table>
     </div>
 {% endfor %}
